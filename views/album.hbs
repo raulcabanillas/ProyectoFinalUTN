@@ -1,0 +1,142 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+
+<div class="container">
+    <div class="text-center m-5">
+        <hr>
+        <h1>{{titulo}}</h1>
+        <hr>
+    </div>
+</div>
+
+<div class="text-center validacion">
+    <h2 class="text-danger" style="margin-bottom: 34px;">
+        {{validacionUpdt}}
+    </h2>
+</div>
+
+<div class="container">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            {{!-- <div class="carousel-item active">
+                <img src="https://depor.com/resizer/XW_kNqwjXx84HJXzDvB0HQbw7OI=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/BSF6FZPAJVDYHI3EDC5L3FO7VU.jpg"
+                    class="d-block w-100" alt="Messi">
+            </div>
+            <div class="carousel-item">
+                <img src="https://depor.com/resizer/XW_kNqwjXx84HJXzDvB0HQbw7OI=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/BSF6FZPAJVDYHI3EDC5L3FO7VU.jpg"
+                    class="d-block w-100" alt="Messi">
+            </div>
+            <div class="carousel-item">
+                <img src="https://depor.com/resizer/XW_kNqwjXx84HJXzDvB0HQbw7OI=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/BSF6FZPAJVDYHI3EDC5L3FO7VU.jpg"
+                    class="d-block w-100" alt="Messi">
+            </div> --}}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+
+{{!-- Mostramos todos los productos a los clientes de la tabla Productos --}}
+
+<div class="container">
+    {{!-- <div class="text-center m-5">
+        <hr>
+        <h1>Lista de Productos</h1>
+        <hr>
+    </div> --}}
+
+    <table class="table table-striped" id="mytable">
+        <thead>
+            <tr>
+                <th> Id</th>
+                <th> Titulo</th>
+                <th> Rating </th>
+                <th> Premios </th>
+                <th> Lanzamiento </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each results}}
+            <form action="/update/{{idalbum}}" method="post">
+                <tr>
+                    {{!-- <td> {{idalbum}} </td>
+                    <td> {{titulo}} </td>
+                    <td> {{rating}} </td>
+                    <td> {{premios}} </td>
+                    <td> {{lanzamiento}} </td>
+                    <td> --}}
+
+                    <td> {{idalbum}} </td>
+                    <td> <input type="text" class="form-control" name="titulo" value="{{titulo}}"> </td>
+                    <td> <input type="number" class="form-control small-input" style="width: 83px !important;" name="rating" value="{{rating}}"> </td>
+                    <td>
+                        <select class="form-control" data-style="btn-info" name="premios">
+                            <option name="{{premios}}" value="{{premios}}">{{premios}}</option>
+                            <option name="Oro" value="Oro">Oro</option>
+                            <option name="Platino" value="Platino">Platino</option>
+                            <option name="Clasico" value="Clasico">Clasico</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                    <td> <input type="date" class="form-control" name="lanzamiento" value="{{lanzamiento}}"> </td>
+                    {{!-- <td> {{lanzamiento}} </td> --}}
+
+                    <td> <select class="form-control" data-style="btn-info" name="nombre">
+                            <option name="{{nombre}}" value="{{nombre}}">{{nombre}}</option>
+                            <option name="1" value="1">Luis Miguel</option>
+                            <option name="2" value="2">Dua Lipa</option>
+                            <option name="3" value="3">Ariel Ramírez</option>
+                            <option name="4" value="4">J. S. Bach</option>
+                            <option name="5" value="5">Soda Stereo</option>
+                            <option name="6" value="6">Drake</option>
+                            </optgroup>
+                        </select></td>
+                    <td> <select class="form-control" data-style="btn-info" name="nombregenero">
+                            <option name="{{nombregenero}}" value="{{nombregenero}}">{{nombregenero}}</option>
+                            <option name="1" value="1">Clásico</option>
+                            <option name="2" value="2">Folklore</option>
+                            <option name="3" value="3">Romántico</option>
+                            <option name="4" value="4">Rock Nacional</option>
+                            <option name="5" value="5">Pop</option>
+                            <option name="6" value="6">Rap</option>
+                            </optgroup>
+                        </select>
+                    </td>
+
+                    <td>
+                        <a href="../delete/{{idalbum}}" class="rowToDelete btn btn-danger delete"
+                            data-id="{{idalbum}}">Eliminar</a>
+                    </td>
+                    <td>
+                        {{!-- <a href="../update/{{idalbum}}" class="rowToDelete btn btn-danger delete"
+                            data-id="{{idalbum}}">Eliminar</a> --}}
+
+                    </td>
+                    <td> <input type="submit" id="btn-actualizar" style="width: 93px !important;" class="button btn-primary w-50 p-2"
+                            value="Actualizar">
+                    </td>
+                </tr>
+
+            </form>
+            {{/each}}
+
+        </tbody>
+
+    </table>
+</div>
+
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "proyectofinal",
+  "version": "1.0.0",
+  "description": "Mi proyecto final para la cursada de UTN ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Berni",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "hbs": "^4.2.0",
+    "jquery": "^3.6.0",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.7.3",
+    "path": "^0.12.7",
+    "popups": "^1.1.3"
+  }
+}

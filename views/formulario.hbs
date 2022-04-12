@@ -1,0 +1,71 @@
+<div class="container">
+
+    <div class="text-center m-5">
+        <hr>
+        <h1>{{titulo}}</h1>
+        <hr>
+    </div>
+
+    <div class="text-center validacion">
+        <h2 class="text-danger">
+            {{validacion}}
+        </h2>
+    </div>
+
+    <div class="row">
+        <form action="/create" method="post">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Título</label>
+                <input type="text" class="form-control" name="titulo" placeholder="Nombre del album">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Rating</label>
+                <input type="number" class="form-control" name="rating" placeholder="Rating">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Premios</label>
+                <select class="form-control" data-style="btn-info" name="premios">
+                    <option name="Ninguno" value="Ninguno">Ninguno</option>
+                    <option name="Oro" value="Oro">Oro</option>
+                    <option name="Platino" value="Platino">Platino</option>
+                    <option name="Clasico" value="Clasico">Clasico</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Lanzamiento</label>
+                <input type="date" class="form-control" value="2011-11-05" name="lanzamiento" placeholder="Lanzamiento">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Intérprete</label>
+                <select class="form-control" data-style="btn-info" name="interprete">
+                    <option name="1" value="1">Luis Miguel</option>
+                    <option name="2" value="2">Dua Lipa</option>
+                    <option name="3" value="3">Ariel Ramírez</option>
+                    <option name="4" value="4">J. S. Bach</option>
+                    <option name="5" value="5">Soda Stereo</option>
+                    <option name="6" value="6">Drake</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Género</label>
+                <select class="form-control" data-style="btn-info" name="genero">
+                    <option name="1" value="1">Clásico</option>
+                    <option name="2" value="2">Folklore</option>
+                    <option name="3" value="3">Romántico</option>
+                    <option name="4" value="4">Rock Nacional</option>
+                    <option name="5" value="5">Pop</option>
+                    <option name="6" value="6">Rap</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="mb-3 text-center">
+                <input type="submit" class="button btn-primary w-50 p-2" value="Enviar Datos">
+            </div>
+        </form>
+    </div>
+
+
+</div>
